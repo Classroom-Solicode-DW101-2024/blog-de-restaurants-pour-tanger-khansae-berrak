@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog des Restaurants à Tanger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="img/loho2RM.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#restaurant-list">Catalogue</a></li>
+          <li><a href="admin.html">Admin</a></li>
+     
+        </ul>
+        <form class="formulaire" id="search-form">
+          <input type="text" id="search-input" placeholder="Recherche" class="search-btn" />
+          <button type="submit">
+            <img src="img/icon serche.png" alt="search-icon" class="search-icon" />
+          </button>
+        </form>
+        <div id="search-results" class="search-results"></div>
+        
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Video -->
+  <section class="hero-bg">
+     <div class="overlay"></div>
+    <div class="diamond-video-container">
+      <video autoplay loop muted class="diamond-video">
+        <source src="V1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay-text"> 
+      <h2>Un voyage gastronomique, une pincée de fraîcheur, des saveurs variées..Telles sont les promesses Tanger!</h1><br>
+       <br> <a href="tel:+" class="page-btn">Explore</a> 
+ </div> 
+  </section>
+  <div class="hero2"><h2> KHB restau vous souhaite la bienvenue</h3></div>
+  <main>
+    <div id="restaurant-list"></div>
+    
+
+  </main>
+  <footer>
+    <div class="footer">
+        <div class="solicode">
+            <img src="./imgs/logo.png" alt="">
+                 <BR><p>REstau khansae berrak une institution de premier plan qui se consacre </BR>à doter les apprenants des compétences nécessaires pour <BR> prospérer dans des carrières axées sur la technologie.</p>
+        </div>
+        <div class="liens">
+            <h3>Liens rapides</h3>
+            <li><a href="#">Home</a></li>
+          <li><a href="#restaurant-list">Catalogue</a></li>
+          <li><a href="admin.html">Admin</a></li>
+     
+        </div>
+        <div class="entrer-contact">
+            <h3>Entrez en contact</h3>
+            <p>Email: berrak.khansaed@gmail.com</p>
+            <p>Portable: (212) 675 33 15 41</p>
+            <p>Fixe: (212) 6 33 53 98 33 </p>
+            <p>Address: REU Fes 90000 Tanger, Maroc</p>
+        </div>
+    </div>
+    <div class="icons">
+        <a href="https://web.facebook.com/khansae" target="_blank"><img src="./imgs/facebook.png"></a>
+        <a href="https://www.instagram.com/khansae.Tanger/" target="_blank"><img src="./imgs/instagram.png"></a>
+        <a href="https://x.com/KHANSAEBERRAK_co" target="_blank"><img src="./imgs/twitter.png"></a>
+        <a href="https://www.linkedin.com/school/khansae/" target="_blank"><img src="./imgs/linkedin.png"></a>
+    </div>
+    <hr>
+    <div class="copyright">
+        <p>Copyrights © 2024 All Rights Reserved by khansae.</p>
+    </div>
+</footer>
+  <script src="server.js"></script>
+
+</body>
+</html>
+

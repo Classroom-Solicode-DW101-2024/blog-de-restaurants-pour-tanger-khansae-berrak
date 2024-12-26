@@ -1,0 +1,469 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+header {
+  width: 100%;
+  height: 110px;
+  padding: 10px;
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  background-color: #1e1e1e;
+  z-index: 10; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.logo img {
+  height: 110px;
+  object-fit: contain;
+}
+
+
+nav {
+  display: flex;            
+  justify-content: center; 
+  width: 100%;              
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  justify-content: center;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.formulaire {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute; 
+  right: 20px;
+  transform: translateY(-50%); 
+}
+
+/* Search button */
+.search-btn {
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+.hero-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  margin-top: 110px; 
+}
+
+.diamond-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; 
+}
+
+.diamond-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; 
+  background: rgba(16, 16, 16, 0.5);
+}
+.overlay-text {
+  position: absolute;
+  top: 10%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  color: white; 
+  text-align: center;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  animation: slide 5s ease-in-out infinite; 
+}
+@keyframes slide {
+  0% {
+    top: 10%;
+    opacity: 0; 
+  }
+  50% {
+    top: 40%; 
+    opacity: 1; 
+  }
+  100% {
+    top: 10%; 
+    opacity: 0; /
+  }
+}
+.page-btn {
+  
+    background-color: #393838;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+.page-btn:hover {
+    background-color: #1b1a1a;
+  }
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap; /* يضمن التفاف البطاقات إلى الصف التالي إذا لم يكن هناك مساحة كافية */
+  gap: 200px; /* المسافة بين البطاقات */
+  justify-content: center; /* يجعل البطاقات في الوسط */
+  padding: 200px;
+}
+
+.restaurant-card {
+  flex: 0 0 calc(33.333% - 20px); /* يحدد عرض كل بطاقة ليكون 1/3 من العرض الكلي مع أخذ الفجوة في الحسبان */
+  box-sizing: border-box; /* لضمان أن الحواف الداخلية لا تؤثر على العرض */
+  background-color: #898787;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05); /* تكبير خفيف عند التمرير */
+}
+
+@media (max-width: 768px) {
+  .restaurant-card {
+    flex: 0 0 calc(50% - 20px); /* بطاقتين في الصف للأجهزة الصغيرة */
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card {
+    flex: 0 0 100%; /* بطاقة واحدة في كل صف للأجهزة الصغيرة جدًا */
+  }
+}
+
+.restaurant-card img {
+  width: 500PX; /* يجعل الصورة تأخذ العرض الكامل للبطاقة */
+  height: 500px; /* يضبط ارتفاع ثابت لجميع الصور */
+  object-fit: cover; /* لضمان تغطية الصورة بالكامل دون تشويه */
+  border-radius: 8px;
+}
+
+.restaurant-card h3 {
+  margin: 15px 0;
+}
+
+.restaurant-card p {
+  color: #393838;
+}
+
+.restaurant-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  height: 25px;
+  width: 75px;
+  margin-top: 16px;
+  background-color: #393838;
+}
+
+.restaurant-card a:hover {
+  background-color: aliceblue;
+  color: black;
+  text-decoration: underline;
+}
+.star{
+  z-index: 10; 
+   -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    width: 16px;
+    height: 16px;
+  margin-left: 690px;
+   margin-top: -18px;
+ 
+  background: rgba(255, 255, 0, 0.751);
+ 
+}
+.hero2{
+  background-color: #1e1e1e;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details-btn {
+ 
+    background-color: #393838;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+
+}
+  .details-btn:hover {
+    background-color: #1b1a1a;
+  }
+
+
+a[href*="restaurant.html"] {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  color: #ffffff; 
+  background-color:  #393838;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* التأثير عند التمرير */
+a[href*="restaurant.html"]:hover {
+  background-color:transparent; 
+  color: #1e1e1e; 
+  transform: scale(1.05); 
+  border: 1px solid;
+}
+.restaurant-info{
+  border: 1px solid;
+ border-radius: 5px ;
+
+}
+footer {
+  background-color: #1e1e1e;
+  width: 100%;
+  padding: 0 50px 20px;
+}
+
+footer .footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  color: #fff;
+  justify-items: center;
+  width: 100%;
+}
+
+footer .footer .solicode {
+  margin-right: 50px;
+  margin-top: 80px;
+}
+
+@media (max-width: 1017.33px) {
+  footer .footer {
+      display: flex;
+      justify-content: space-between;
+  }
+  footer .footer > div {
+      width: 400px;
+      padding: 50px;
+  }
+}
+
+@media (max-width: 772px) {
+  footer .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+  footer .footer > div {
+      width: 100%;
+      padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  footer .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+      "logo logo"
+      "links contact"
+      ;
+  }
+  footer .footer > div {
+      width: 100%;
+      padding: 20px;
+  }
+  footer .footer .solicode {
+      grid-area: logo;
+  }
+  footer .footer .liens {
+      grid-area: links;
+  }
+  footer .footer .entrer-contact {
+      grid-area: contact;
+  }
+}
+
+@media (max-width: 408px) {
+  footer .footer {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "logo"
+      "links"
+      "contact"
+      ;
+  }
+  footer .footer > div {
+      width: 100%;
+      padding: 20px;
+  }
+  footer .footer .solicode {
+      grid-area: logo;
+  }
+  footer .footer .liens {
+      grid-area: links;
+  }
+  footer .footer .entrer-contact {
+      grid-area: contact;
+  }
+}
+
+footer .footer .liens {
+  margin-top: 60px;
+}
+
+footer .footer .liens h3 {
+  margin-bottom: 10px;
+}
+
+footer .footer .liens li {
+  margin-bottom: 3px;
+}
+
+footer .footer .liens li a:hover {
+  color: var(--main-color);
+}
+
+footer .footer .liens a {
+  font-size: 15px;
+  color: #fff;
+}
+
+footer .footer .entrer-contact {
+  margin-top: 60px;
+}
+
+footer .footer .entrer-contact h3 {
+  margin-bottom: 10px;
+}
+
+footer .footer .entrer-contact p {
+  margin-bottom: 3px;
+}
+
+footer .solicode img {
+  width: 150px;
+}
+
+footer .solicode p {
+  margin-top: -30px;
+}
+
+footer .icons img {
+  width: 20px;
+  cursor: pointer;
+}
+
+footer .icons img:hover {
+  transform: scale(1.1);
+}
+
+footer .icons {
+  text-align: right;
+}
+
+footer .copyright {
+  font-size: 13px;
+  color: grey;
+  text-align: center;
+  font-weight: 500;
+}
+
+footer hr {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}

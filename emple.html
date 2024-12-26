@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bokor&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Pacifico&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      body {
+        background-color: #e9e9e9;
+      }
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        width: 1250px;
+        height: 50px;
+      }
+
+      .logo {
+        width: 100px;
+        height: 50px;
+      }
+
+      .headeriMG {
+        display: flex;
+        justify-content: space-between;
+        width: 1250px;
+        height: 300px;
+        margin-top: -20px;
+      }
+
+      .content {
+        width: 1250px;
+        height: auto;
+        background-color: #fef2f4;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer {
+        width: 1250px;
+        height: 20px;
+        background-color: #efb8d0;
+      }
+
+      .Bienvenue {
+        font-size: 25px;
+        color: #6d364e;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+      }
+
+      a {
+        color: black;
+      }
+
+      #books-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .book {
+        margin: 50px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #d3d2d2;
+        width: 280px;
+        height: 450px;
+        border-radius: 8px;
+      }
+
+      .book img {
+        width: 200px;
+        height: 300px;
+        margin-left: 30px;
+        margin-top: 10px;
+      }
+
+      .book h2 {
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      p {
+        text-align: center;
+        color: rgb(56, 52, 52);
+      }
+
+      .book button {
+        width: 80px;
+        height: 40px;
+        background-color: #d3d2d2;
+        border: none;
+        border-radius: 0 0 90px 90px;
+        padding: 10px;
+        margin-left: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .book button img {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: -1px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .search-btn {
+        border: solid 2px;
+        border-color: #ff33a4;
+        border-radius: 5px;
+        width: 150px;
+        height: 30px;
+        margin-top: 10px;
+      }
+
+      .search-icon {
+        border: solid 2px;
+        border-color: #ff33a4;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        margin-bottom: -5px;
+      } 
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <form class="formulaire">
+          <input type="text" placeholder="Recherche" class="search-btn" />
+          <button type="submit">
+            <img src="img/search.png" alt="search-icon" class="search-icon" />
+          </button>
+        </form>
+
+        <a href="index.html"><p>Accueil</p></a>
+        <a href="wishReads.html"><p>MyWishReads</p></a>
+        <a href="details.html"><p>ToRead</p></a>
+
+        <img src="img/logo.webp" alt="logo" class="logo" />
+      </div>
+    </header>
+
+    <br /><br />
+
+    <img
+      src="img/Capture d_écran 2024-11-14 135256.png"
+      alt="headerImage"
+      class="headeriMG"
+    />
+
+    <div class="content">
+      <p class="Bienvenue">Bienvenue dans votre bibliothèque</p>
+    </div>
+
+    <div class="footer"></div>
+
+    <br /><br />
+
+    <div id="books-container"></div>
+
+    <script>
+      let allBooks = [];
+      fetch("./data.json")
+        .then((response) => {
+          if (!response.ok) {
+            console.error("Erreur de récupération de fichier");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          allBooks = data.books;
+          displayBooks(allBooks); 
+        })
+        .catch((error) => {
+          console.error("Erreur de récupération des données:", error);
+        });
+
+      function displayBooks(books) {
+        const container = document.getElementById("books-container");
+        container.innerHTML = "";
+
+        if (books.length === 0) {
+          container.innerHTML = "<p>No books found</p>";
+          return;
+        }
+
+        books.forEach((book) => {
+          const bookElement = document.createElement("div");
+          bookElement.classList.add("book");
+
+          bookElement.innerHTML = `
+            <a href="${book.page}" class="book-link">
+              <img src="${book.cover || "https://via.placeholder.com/150"}" alt="${book.title} cover">
+            </a>
+            <h2>${book.title}</h2>
+            <p>${book.author.fullname}</p>
+          `;
+
+          const button = document.createElement("button");
+          button.innerHTML = '<img src="img/save.jpg" alt="Wishlist Icon">';
+          button.addEventListener("click", () => {
+            let wishlistBooks = JSON.parse(localStorage.getItem("wishlistBooks")) || [];
+            if (!wishlistBooks.includes(book.title)) {
+              wishlistBooks.push(book.title);
+              localStorage.setItem("wishlistBooks", JSON.stringify(wishlistBooks));
+            }
+            window.location.href = "wishReads.html";
+          });
+
+          bookElement.appendChild(button);
+          container.appendChild(bookElement);
+        });
+      }
+
+      document.querySelector(".formulaire").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const searchQuery = document.querySelector(".search-btn").value.toLowerCase();
+        const filteredBooks = allBooks.filter(
+          (book) =>
+            book.title.toLowerCase().includes(searchQuery) ||
+            book.author.fullname.toLowerCase().includes(searchQuery)
+        );
+        displayBooks(filteredBooks);
+      });
+    </script>
+  </body>
+</html>

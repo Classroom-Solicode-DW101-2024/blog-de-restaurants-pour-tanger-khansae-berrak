@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  body{
+    background-color: #1e1e1e;
+  }
+ /* Card Container */
+.card {
+  
+  display: flex;
+  justify-content: space-between;
+  background-color:#898787;
+  box-shadow: whitesmoke;
+  border-radius: 10px;
+  margin: 90px;
+  margin-right: 90px;
+  margin-left: 90px;
+  overflow: hidden;
+
+}
+
+/* Left Side (Image) */
+.card-left {
+  flex: 1;
+  max-width: 40%;
+}
+
+.card-left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+
+}
+
+/* Right Side (Content) */
+.card-right {
+  flex: 1;
+  padding: 80px;
+
+}
+
+/* Title and Basic Info */
+.card-right h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.card-right p {
+  font-size: 1.1em;
+  color: #333333;
+  margin: 5px 0;
+}
+
+/* Reviews Section */
+.reviews h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.reviews ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reviews li {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+/* View Menu Button */
+.menu-btn {
+  background-color: #393838;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #1b1a1a;
+}
+
+</style>
+<body>
+  <div id="restaurant-details"></div>
+  <div id="restaurant-image"></div>
+  <script src="./details.JS"></script>
+</body>
+
+</html>

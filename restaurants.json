@@ -1,0 +1,124 @@
+[
+      { 
+    "id": 1, 
+    "nom": "Tokana",
+    "address": "Avenue Mokhtar Ahardane, Tangier, Morocco",
+    "speciality": "Traditional Moroccan Food",
+    "notation": 4.6,
+    "cover" : "img/tokana.jpg",
+    "linkPDF" :"https://qr.finedinemenu.com/tocana-2",
+    "reviews": [
+      "Best couscous in Tangier!",
+      "Warm and welcoming atmosphere.",
+      "Highly recommend their mint tea."
+    ]
+  },
+  { 
+    "id": 2, 
+    "nom": "La buca Negra",
+    "address": "Avenue Mokhtar Ahardane, Tangier, Morocco",
+    "speciality": "Traditional Moroccan Food",
+    "notation": 4.6,
+    "cover" : "img/buca negra.webp",
+    "linkPDF" :"https://labocanegra.ma/",
+    "reviews": [
+      "Best couscous in Tangier!",
+      "Warm and welcoming atmosphere.",
+      "Highly recommend their mint tea."
+    ]
+  },
+ 
+  { 
+    "id": 3, 
+    "nom": "Barcelo",
+    "address": "Address details missing",
+    "speciality": "Mediterranean Cuisine",
+    "notation": 4.4,
+    "cover" : "img/barcelo.jpg",
+    "linkPDF" :"https://www.barcelo.com/fr-ma/barcelo-tanger/",
+    "reviews": [
+      "Beautiful view!", 
+      "Delicious seafood."
+    ]
+  },
+  { 
+    "id": 4, 
+    "nom": "Table du Marché",
+    "address": "Address details missing",
+    "speciality": "French Cuisine",
+    "notation": 4.5,
+    "cover" : "img/la-table-du-marche-.jpg",
+    "linkPDF" :"https://www.tripadvisor.fr/Restaurant_Review-g293737-d12636662-Reviews-La_Table_du_Marche_Tanger-Tangier_Tanger_Tetouan_Al_Hoceima.html",
+    "reviews": [
+      "Great pastries!", 
+      "Lovely ambiance."
+    ]
+  },
+  { 
+    "id": 5, 
+    "nom": "La Vue",
+    "address": "Address details missing",
+    "speciality": "International Cuisine",
+    "notation": 4.7,
+    "cover" : "img/la veu.jpeg" ,
+    "linkPDF" :"https://www.tripadvisor.com/Restaurant_Review-g293737-d18980555-Reviews-La_Vue-Tangier_Tanger_Tetouan_Al_Hoceima.html",
+    "reviews": [
+      "Amazing rooftop!", 
+      "Perfect for a romantic dinner."
+    ]
+  },
+  { 
+    "id": 6, 
+    "nom": "RR Ice",
+    "address": "Address details missing",
+    "speciality": "Ice Cream",
+    "notation": 4.8,
+    "cover" : "img/rr ice.jpeg",
+    "linkPDF" :"https://www.visittanger.com/en/cafe/rr-ice/5eeb3dd47a25ef00160d38b3",
+    "reviews": [
+      "Best ice cream in town!", 
+      "Great variety of flavors."
+    ]
+  },
+  { 
+    "id": 7, 
+    "nom": "Soshi Box",
+    "address": "Address details missing",
+    "speciality": "Sushi",
+    "notation": 4.3,
+    "cover" : "img/suchu box.jpeg",
+    "linkPDF" :"https://soccoalto.sushibox.m",
+    "reviews": [
+      "Fresh sushi!", 
+      "Quick service."
+    ]
+  },
+  { 
+    "id": 8, 
+    "nom": "Mirage",
+    "address": "Address details missing",
+    "speciality": "Moroccan Cuisine",
+    "notation": 4.9,
+    "cover" : "img/le-mirage.jpg",
+    "linkPDF" :"https://lemirage.com/fr/our-restaurants/",
+    "reviews": [
+      "Authentic Moroccan experience.", 
+      "Delicious tagine."
+    ]
+  },
+  { 
+    "id": 9, 
+    "nom": "Hilton",
+    "address": "Acentre commercial Tanger City Mall, face au détroit de Gibraltar et au bord de la plage de Malabata, Tangier, Morocco",
+    "speciality": "All Food",
+    "notation": 5,
+    "cover" : "img/hilton.avif",
+    "linkPDF" :"https://www.hilton.com/fr/hotels/tngahhi-hilton-tangier-al-houara-resort-and-spa/dining/",
+    "reviews": [
+      "Best couscous in Tangier!", 
+      "Warm and welcoming atmosphere.",
+      "Highly recommend their mint tea."
+    ]
+  }
+
+]
